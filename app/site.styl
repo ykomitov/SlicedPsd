@@ -1,0 +1,293 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input
+  margin 0
+  padding 0
+  border 0
+  vertical-align baseline
+
+.self-clear,
+#header,
+#nav ul,
+#footer,
+.list
+  zoom 1
+
+.self-clear:after,
+#header:after,
+#nav ul:after,
+#footer:after,
+.list:after
+  content ""
+  clear both
+  display block
+
+body
+  background-image url("../images/background.jpeg")
+  background-repeat repeat
+
+#wrap
+  width 960px
+  margin 50px auto 0 auto
+  position relative
+  background-color white
+
+  nav
+    float right
+    margin 54px 0 0 0
+    padding-right 14px
+
+    ul
+      margin 0
+      padding 0
+      list-style none
+
+    li
+      float left
+      padding-left 5px
+      margin 0 16px 0 0
+
+    a
+      font-family: 'Kreon', serif;
+      font-size 15px
+      text-decoration none
+      font-weight 300
+      color #393939
+
+    a:hover
+      color #437d8b
+
+#header
+  width: 958px
+  height 97px
+  background: #f8f8f8; /* Old browsers */
+  background -moz-linear-gradient(top, #f8f8f8 0%, #ffffff 25%, #ffffff 100%); /* FF3.6-15 */
+  background -webkit-linear-gradient(top, #f8f8f8 0%, #ffffff 25%, #ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background linear-gradient(to bottom, #f8f8f8 0%, #ffffff 25%, #ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+*/
+  box-shadow 0 7px 6px -10px #000;
+  border 1px solid white
+  overflow hidden
+
+#searchBox
+  position absolute
+  top 1px
+  right 1px
+  width 160px
+  height: 27px
+  border-left 1px solid #d5d5d5
+  border-bottom 1px solid #d5d5d5
+
+  #searchSiteInput
+    width 150px
+    height 100%
+    background -moz-linear-gradient(top, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%); /* FF3.6-15 */
+    background -webkit-linear-gradient(top, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%); /* Chrome10-25,Safari5.1-6 */
+    background linear-gradient(to bottom, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    padding-left 10px
+    vertical-align middle
+    overflow hidden
+
+#searchSiteInput::-webkit-input-placeholder
+  font-size 11px
+  font-family Georgia
+  font-style italic
+  color #a5a5a5
+  line-height 18px
+
+#searchSiteInput::-moz-placeholder
+  font-size 11px
+  font-family Georgia
+  font-style italic
+  color #a5a5a5
+
+#searchSiteInput:-ms-input-placeholder
+  font-size 11px
+  font-family Georgia
+  font-style italic
+  color #a5a5a5
+
+#logo
+  position absolute
+
+  img
+    margin 26px 0 0 34px
+
+  #slogan
+    position relative
+    bottom 8px
+    right 146px
+    text-transform uppercase
+    font-family: 'Kreon', serif;
+    font-size 12px
+    color #437d8b
+
+#second-nav
+  width 100%
+  height 51px
+  background-image url("../images/nav-background.jpeg")
+  background-repeat repeat
+
+  ul
+    margin 0
+    padding 0
+    list-style none
+
+  li
+    float left
+    padding-left 22px
+    margin 15px 0 0 0
+
+  a
+    font-family Kreon
+    font-size 15px
+    text-decoration none
+    text-transform uppercase
+    font-weight 300
+    color #393939
+
+  a:hover
+    color #437d8b
+
+.slick-arrow
+  z-index 666 !important
+
+.slick-prev, .slick-next
+  width 36px !important
+  height 36px !important
+  top 165px !important
+  background-repeat no-repeat !important
+  border 1px solid #d5d5d5 !important
+
+.slick-prev::before, .slick-next::before
+  content "" !important
+
+.slick-next
+  right -5px !important
+  background-image url("../images/prev.jpeg") !important
+
+.slick-prev
+  left -5px !important
+  background-image url("../images/back.jpeg") !important
+
+.slider
+  height 320px !important
+  position relative
+
+.slider-info-y
+  float:left
+  background rgba(0, 0, 0, 0.5)
+  font-family: 'Kreon', serif;
+  color white
+  position absolute
+  top 0
+  margin 42px 0 0 495px
+  height 200px
+  width 372px
+  padding 37px 0 0 37px
+  overflow hidden
+
+  h1
+    margin 0 0 7px 0
+    padding 0
+    font-weight 300
+    font-size 28px
+    line-height 28px
+    text-transform capitalize
+    width 66%
+
+  p
+    font-family: 'Droid Sans'
+    font-size 12px
+    line-height 21px
+    padding-right 20px
+    height 110px
+    overflow hidden
+
+  .read-more
+    padding 2px 15px
+    position absolute
+    bottom 0
+    right 0
+    background-color rgba(0,0,0,0.8)
+
+    a
+      font-weight 400
+      text-transform capitalize
+      font-size 13px
+      text-decoration none
+      color #7b9297
+
+    a:hover
+      color white
+
+
+#main-content
+  margin-top 50px
+
+#page-heading
+  border-top 1px solid #f0f0f0
+  border-bottom 1px solid #f0f0f0
+  font-family: 'Kreon', serif;
+  width 888px
+  height 128px
+  margin 0 auto
+  text-align center
+
+  h1
+    margin-top 30px
+    font-weight 300
+    font-size 28px
+
+  h3
+    font-weight 300
+    font-size 20px
+    color #929292
+
+footer
+  height 320px
+  background-color #f0f0f0
+  border-top 1px solid #ececec
+
+#info-container
+  margin 0 25px
+
+.list
+  margin 0
+  padding 0
+  list-style none
+
+.list .item
+  float left
+  overflow hidden
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+  padding 25px
+
+  p
+    width: 240px
+
+  img
+    border 3px solid white
+    -webkit-box-shadow 1px 1px 2px 1px rgba(0,0,0,0.75)
+    -moz-box-shadow 1px 1px 2px 1px rgba(0,0,0,0.75)
+    box-shadow 1px 1px 2px 1px rgba(0,0,0,0.75)
+
+.list.col-2 .item
+  width 50%
+
+.list.col-3 .item
+  width 33.33%
+
+.list.col-4 .item
+  width 25%
