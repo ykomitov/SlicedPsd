@@ -36,6 +36,13 @@ body
   background-image url("../images/background.jpeg")
   background-repeat repeat
 
+h3
+  font-family 'Kreon', serif
+  font-weight 300
+  font-size 20px
+  text-transform capitalize
+  color #1d1d1d
+
 #wrap
   width 960px
   margin 50px auto 0 auto
@@ -48,8 +55,6 @@ body
     padding-right 14px
 
     ul
-      margin 0
-      padding 0
       list-style none
 
     li
@@ -78,7 +83,7 @@ body
   border 1px solid white
   overflow hidden
 
-#searchBox
+#search-box
   position absolute
   top 1px
   right 1px
@@ -87,7 +92,7 @@ body
   border-left 1px solid #d5d5d5
   border-bottom 1px solid #d5d5d5
 
-  #searchSiteInput
+  #search-input
     width 150px
     height 100%
     background -moz-linear-gradient(top, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%); /* FF3.6-15 */
@@ -97,20 +102,20 @@ body
     vertical-align middle
     overflow hidden
 
-#searchSiteInput::-webkit-input-placeholder
+#search-input::-webkit-input-placeholder
   font-size 11px
   font-family Georgia
   font-style italic
   color #a5a5a5
   line-height 18px
 
-#searchSiteInput::-moz-placeholder
+#search-input::-moz-placeholder
   font-size 11px
   font-family Georgia
   font-style italic
   color #a5a5a5
 
-#searchSiteInput:-ms-input-placeholder
+#search-input:-ms-input-placeholder
   font-size 11px
   font-family Georgia
   font-style italic
@@ -158,10 +163,12 @@ body
   a:hover
     color #437d8b
 
-.slick-arrow
+/*      Sliders section     */
+
+.slider .slick-arrow
   z-index 666 !important
 
-.slick-prev, .slick-next
+.slider .slick-prev, .slider .slick-next
   width 36px !important
   height 36px !important
   top 165px !important
@@ -171,20 +178,48 @@ body
 .slick-prev::before, .slick-next::before
   content "" !important
 
-.slick-next
-  right -5px !important
+.slider .slick-next
+  right -5px
   background-image url("../images/prev.jpeg") !important
 
-.slick-prev
-  left -5px !important
+.slider .slick-prev
+  left -5px
   background-image url("../images/back.jpeg") !important
 
+.slider-responsive
+  border 1px solid #f0f0f0
+  border-radius 5 px
+  padding 15px 0 0 18px
+  width 555px
+  height 85px
+
+  .slick-slide
+    width 52px !important
+    height 58px !important
+    margin-right 25px !important
+
+  img
+    border 2px solid white
+
+.slider-responsive img, .slider-responsive .slick-next, .slider-responsive .slick-prev
+  -moz-box-shadow 0px 0px 1px rgba(0, 0, 0, 0.55) !important
+  -webkit-box-shadow 0px 0px 1px rgba(0, 0, 0, 0.55) !important
+  box-shadow 0px 0px 1px rgba(0, 0, 0, 0.55) !important
+
+.slider-responsive .slick-next
+  right -5px
+  background-image url("../images/prev-sm.jpg") !important
+
+.slider-responsive .slick-prev
+  left -5px
+  background-image url("../images/back-sm.jpg") !important
+
 .slider
-  height 320px !important
+  height 320px
   position relative
 
 .slider-info-y
-  float:left
+  float: left
   background rgba(0, 0, 0, 0.5)
   font-family: 'Kreon', serif;
   color white
@@ -218,7 +253,7 @@ body
     position absolute
     bottom 0
     right 0
-    background-color rgba(0,0,0,0.8)
+    background-color rgba(0, 0, 0, 0.8)
 
     a
       font-weight 400
@@ -230,40 +265,29 @@ body
     a:hover
       color white
 
+/*      Slider section ends     */
 
 #main-content
   margin-top 50px
+  padding 0 50px
 
 #page-heading
+  margin-left -15px
   border-top 1px solid #f0f0f0
   border-bottom 1px solid #f0f0f0
   font-family: 'Kreon', serif;
   width 888px
   height 128px
-  margin 0 auto
   text-align center
 
   h1
     margin-top 30px
     font-weight 300
     font-size 28px
-
-  h3
-    font-weight 300
-    font-size 20px
-    color #929292
-
-footer
-  height 320px
-  background-color #f0f0f0
-  border-top 1px solid #ececec
-
-#info-container
-  margin 0 25px
+    color #1d1d1d
 
 .list
-  margin 0
-  padding 0
+  box-sizing border-box
   list-style none
 
 .list .item
@@ -271,23 +295,64 @@ footer
   overflow hidden
   -webkit-box-sizing border-box
   -moz-box-sizing border-box
-  box-sizing border-box
-  padding 25px
+  padding 0 20px
 
   p
+    font-family: 'Droid Sans'
+    font-size 12px
+    line-height 24px
+    color #929292
     width: 240px
+    padding-left 5px
 
   img
+    margin 10px 0
     border 3px solid white
-    -webkit-box-shadow 1px 1px 2px 1px rgba(0,0,0,0.75)
-    -moz-box-shadow 1px 1px 2px 1px rgba(0,0,0,0.75)
-    box-shadow 1px 1px 2px 1px rgba(0,0,0,0.75)
+    -webkit-box-shadow 1px 1px 2px 1px rgba(0, 0, 0, 0.75)
+    -moz-box-shadow 1px 1px 2px 1px rgba(0, 0, 0, 0.75)
+    box-shadow 1px 1px 2px 1px rgba(0, 0, 0, 0.75)
 
-.list.col-2 .item
+.col-2.item
   width 50%
 
-.list.col-3 .item
+.col-3.item
   width 33.33%
 
-.list.col-4 .item
-  width 25%
+#info-container
+  margin-top 15px
+
+#multimedia-container
+  margin-top 50px
+  width 100%
+  height 200px
+  background-color white
+
+#blog-posts
+  width 33.333%
+  float left
+
+  ul, a
+    margin 0
+    padding-left 10px
+    font-family: 'Droid Sans'
+    font-size 12px
+    line-height 24px
+    color #a3a3a3
+
+    a
+      text-decoration none
+
+
+#multimedia
+  width 66.666%
+  float left
+
+  h3
+    margin-bottom 10px
+
+footer
+  float left
+  width 100%
+  height 320px
+  background-color #f9f9f9
+  border-top 1px solid #ececec
