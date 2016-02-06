@@ -267,17 +267,17 @@ h3
 
 /*      Slider section ends     */
 
-#main-content
-  margin-top 50px
-  padding 0 50px
+#main-content, #footer-container
+  width 860px
+  margin auto
 
 #page-heading
-  margin-left -15px
   border-top 1px solid #f0f0f0
   border-bottom 1px solid #f0f0f0
   font-family: 'Kreon', serif;
   width 888px
   height 128px
+  margin 50px auto 0 auto
   text-align center
 
   h1
@@ -292,10 +292,10 @@ h3
 
 .list .item
   float left
-  overflow hidden
   -webkit-box-sizing border-box
   -moz-box-sizing border-box
-  padding 0 20px
+  display inline-block
+  margin 0 62px 0 0
 
   p
     font-family: 'Droid Sans'
@@ -312,14 +312,20 @@ h3
     -moz-box-shadow 1px 1px 2px 1px rgba(0, 0, 0, 0.75)
     box-shadow 1px 1px 2px 1px rgba(0, 0, 0, 0.75)
 
+  &:last-child
+    margin-right 0
+
 .col-2.item
   width 50%
 
 .col-3.item
   width 33.33%
 
+.col-4.item
+  width 25%
+
 #info-container
-  margin-top 15px
+  margin-top 45px
 
 #multimedia-container
   margin-top 50px
@@ -345,14 +351,41 @@ h3
 
 #multimedia
   width 66.666%
-  float left
+  float: none
+  margin-left: 300px
 
   h3
     margin-bottom 10px
 
 footer
-  float left
-  width 100%
   height 320px
   background-color #f9f9f9
   border-top 1px solid #ececec
+
+.footer
+  float left
+  //overflow hidden
+
+#footer-container
+  margin-top 35px
+  font-family 'Droid Sans'
+  font-size 12px
+  color #929292
+
+  h3
+    margin-bottom 10px
+
+  a
+    text-decoration none
+    color #929292
+
+  &>p
+    position absolute
+    bottom 0
+    right 0
+    margin 0 50px 30px 0
+    color #cdcdcd
+
+    i
+      color #929292
+      font-style normal
