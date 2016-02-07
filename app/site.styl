@@ -63,7 +63,7 @@ h3
       margin 0 16px 0 0
 
     a
-      font-family: 'Kreon', serif;
+      font-family: 'Kreon', serif
       font-size 15px
       text-decoration none
       font-weight 300
@@ -132,7 +132,7 @@ h3
     bottom 8px
     right 146px
     text-transform uppercase
-    font-family: 'Kreon', serif;
+    font-family: 'Kreon', serif
     font-size 12px
     color #437d8b
 
@@ -153,7 +153,7 @@ h3
     margin 15px 0 0 0
 
   a
-    font-family Kreon
+    font-family 'Kreon', serif
     font-size 15px
     text-decoration none
     text-transform uppercase
@@ -194,8 +194,6 @@ h3
   height 85px
 
   .slick-slide
-    width 52px !important
-    height 58px !important
     margin-right 25px !important
 
   img
@@ -221,7 +219,7 @@ h3
 .slider-info-y
   float: left
   background rgba(0, 0, 0, 0.5)
-  font-family: 'Kreon', serif;
+  font-family: 'Kreon', serif
   color white
   position absolute
   top 0
@@ -265,6 +263,27 @@ h3
     a:hover
       color white
 
+
+.info-pop
+  position absolute
+  width 170px
+  height 100px
+  text-align center
+  background-color #fff
+  border 1px solid #dcdcdc
+  border-radius 6px
+
+  &:before
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    top: 100px;
+    border: 25px solid;
+    border-color: black transparent transparent black;
+
+
 /*      Slider section ends     */
 
 #main-content, #footer-container
@@ -274,7 +293,7 @@ h3
 #page-heading
   border-top 1px solid #f0f0f0
   border-bottom 1px solid #f0f0f0
-  font-family: 'Kreon', serif;
+  font-family: 'Kreon', serif
   width 888px
   height 128px
   margin 50px auto 0 auto
@@ -294,7 +313,6 @@ h3
   float left
   -webkit-box-sizing border-box
   -moz-box-sizing border-box
-  display inline-block
   margin 0 62px 0 0
 
   p
@@ -348,11 +366,11 @@ h3
     a
       text-decoration none
 
-
 #multimedia
   width 66.666%
   float: none
   margin-left: 300px
+  overflow visible
 
   h3
     margin-bottom 10px
@@ -362,22 +380,35 @@ footer
   background-color #f9f9f9
   border-top 1px solid #ececec
 
-.footer
-  float left
-  //overflow hidden
-
 #footer-container
   margin-top 35px
   font-family 'Droid Sans'
   font-size 12px
   color #929292
 
+  .footer
+    float left
+    width 190px
+    margin-right 33px
+
+    &:last-of-type
+      margin 0
+
   h3
     margin-bottom 10px
+
+  h6
+    font-family 'Kreon', serif
+    font-size 12px
+    font-weight 400
+    color #717171
 
   a
     text-decoration none
     color #929292
+
+  img
+    margin-bottom 5px
 
   &>p
     position absolute
@@ -389,3 +420,16 @@ footer
     i
       color #929292
       font-style normal
+
+.footer-list
+  ul
+    margin-left 12px
+
+    li
+      margin-top 10px
+
+.footer p
+  line-height 20px
+
+#info-1
+  position relative
