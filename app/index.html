@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Chameleon Blog System</title>
+  <!--<link rel="stylesheet" href="styles/site.min.css">-->
   <link rel="stylesheet" href="styles/site.css">
   <link rel="stylesheet" href="styles/slick.css">
   <link rel="stylesheet" href="styles/slick-theme.css">
+  <link rel="stylesheet" href="styles/main-slider.css">
+  <link rel="stylesheet" href="styles/slider-yzk.css">
   <link rel="stylesheet" href="styles/panel.css">
   <link href='https://fonts.googleapis.com/css?family=Kreon:300,400' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -13,6 +16,15 @@
 <body>
 <a href="#" class="cd-btn"></a>
 <div id="wrap">
+  <!-- Panel code starts-->
+  <div class="cd-panel from-left">
+    <a href="#" class="cd-panel-close"></a>
+    <p id="panel-heading">Background textures</p>
+    <p id="panel-description">Choose a custom BG image</p>
+    <div id="bg-images-container">
+    </div>
+  </div>
+  <!-- Panel code ends here-->
   <header id="header">
     <form id="search-box"><input id="search-input" type="text" placeholder="Search this website..."></form>
     <div id="logo">
@@ -30,13 +42,6 @@
       </ul>
     </nav>
   </header>
-  <!--test code starts-->
-
-  <div class="cd-panel from-left">
-    <a href="#" class="cd-panel-close"></a>
-    <p>Yey it works mtfk!</p>
-  </div> <!-- cd-panel -->
-  <!--test code ends here-->
   <div id="second-nav">
     <ul>
       <li><a href="#">Home</a></li>

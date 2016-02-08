@@ -6,46 +6,40 @@ module.exports = function (grunt) {
         'dev/scripts/**/*.js'
       ]
     },
-    //jade: {
-    //  serve: {
-    //    files: {
-    //      'dev/sample-jade.html': 'app/sample-jade.jade'
-    //    }
-    //  },
-    //  build: {
-    //    files: {
-    //      'dist/sample-jade.html': 'app/sample-jade.jade'
-    //    }
-    //  }
-    //},
     copy: {
       serve: {
         files: [
-          {expand: true, src: ['app/images/*'], dest: 'dev/images/', filter: 'isFile', flatten: true},
+          {expand: true, cwd: 'app/fonts/', src: ['**'], dest: 'dev/fonts/', filter: 'isFile', flatten: false},
+          {expand: true, cwd: 'app/images/', src: ['**'], dest: 'dev/images/', filter: 'isFile', flatten: false},
           {expand: true, src: ['app/js/*'], dest: 'dev/js/', filter: 'isFile', flatten: true},
           {expand: true, src: ['app/index.html'], dest: 'dev/', flatten: true},
-          {expand: true, src: ['app/styles/*'], dest: 'dev/styles/', flatten: true},
+          {expand: true, src: ['app/styles/*.css'], dest: 'dev/styles/', flatten: true},
           {expand: true, src: ['app/styles/fonts/*'], dest: 'dev/styles/fonts', flatten: true}
         ]
       },
       build: {
         files: [
-          {expand: true, src: ['app/images/*'], dest: 'dist/images/', filter: 'isFile', flatten: true},
+          {expand: true, cwd: 'app/fonts/', src: ['**'], dest: 'dist/fonts/', filter: 'isFile', flatten: false},
+          {expand: true, cwd: 'app/images/', src: ['**'], dest: 'dist/images/', filter: 'isFile', flatten: false},
           {expand: true, src: ['app/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true},
           {expand: true, src: ['app/index.html'], dest: 'dist/', flatten: true},
-          {expand: true, src: ['app/styles/*'], dest: 'dist/styles/', flatten: true}
+          {expand: true, src: ['app/styles/*.css'], dest: 'dist/styles/', flatten: true}
         ]
       }
     },
     stylus: {
       serve: {
         files: {
-          'dev/styles/site.css': 'app/site.styl'
+          'dev/styles/site.css': 'app/styles/site.styl',
+          'dev/styles/main-slider.css': 'app/styles/main-slider.styl',
+          'dev/styles/slider-yzk.css': 'app/styles/slider-yzk.styl'
         }
       },
       build: {
         files: {
-          'dist/styles/site.css': 'app/site.styl'
+          'dist/styles/site.css': 'app/styles/site.styl',
+          'dist/styles/main-slider.css': 'app/styles/main-slider.styl',
+          'dist/styles/slider-yzk.css': 'app/styles/slider-yzk.styl'
         }
       }
     },
@@ -64,6 +58,12 @@ module.exports = function (grunt) {
           dest: 'dist/styles/min',
           ext: '.min.css'
         }]
+      }
+    },
+    concat: {
+      build: {
+        src: 'dist/styles/min/*.css',
+        dest: 'dist/styles/site.min.css'
       }
     },
     watch: {
@@ -95,7 +95,8 @@ module.exports = function (grunt) {
         files: [
           'app/**/*.jade',
           'app/**/*.styl',
-          'app/**/*.html'
+          'app/**/*.html',
+          'app/**/*.css'
         ]
       }
     },
