@@ -5,7 +5,7 @@
     if (currentBackground) {
       $('body').css('background-image', 'url("../images/bg-textures/' + currentBackground + '")');
     }else{
-      $('body').css('background-image', 'url("../images/bg-textures/default.jpg")');
+      $('body').css('background-image', 'url("../images/bg-textures/t-5.jpg")');
     }
 
     // Open the lateral panel
@@ -26,7 +26,7 @@
     var panelContainer = $('#bg-images-container');
 
     for (var i = 0; i < 16; i += 1) {
-      var $currentDiv = $("<div/>");
+      var $currentDiv = $("<div>");
       var textureId = i + 1;
       $currentDiv.addClass('bg-texture');
       $currentDiv.attr('id', 't-' + textureId);
