@@ -12,7 +12,7 @@ module.exports = function (grunt) {
           {expand: true, cwd: 'app/fonts/', src: ['**'], dest: 'dev/fonts/', filter: 'isFile', flatten: false},
           {expand: true, cwd: 'app/images/', src: ['**'], dest: 'dev/images/', filter: 'isFile', flatten: false},
           {expand: true, src: ['app/js/*'], dest: 'dev/js/', filter: 'isFile', flatten: true},
-          {expand: true, src: ['app/index.html'], dest: 'dev/', flatten: true},
+          {expand: true, src: ['app/*.html'], dest: 'dev/', flatten: true},
           {expand: true, src: ['app/styles/*.css'], dest: 'dev/styles/', flatten: true},
           {expand: true, src: ['app/styles/fonts/*'], dest: 'dev/styles/fonts', flatten: true}
         ]
@@ -22,7 +22,7 @@ module.exports = function (grunt) {
           {expand: true, cwd: 'app/fonts/', src: ['**'], dest: 'dist/fonts/', filter: 'isFile', flatten: false},
           {expand: true, cwd: 'app/images/', src: ['**'], dest: 'dist/images/', filter: 'isFile', flatten: false},
           {expand: true, src: ['app/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true},
-          {expand: true, src: ['app/index.html'], dest: 'dist/', flatten: true},
+          {expand: true, src: ['app/*.html'], dest: 'dist/', flatten: true},
           {expand: true, src: ['app/styles/*.css'], dest: 'dist/styles/', flatten: true}
         ]
       }

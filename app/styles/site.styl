@@ -48,6 +48,9 @@ h3
   position relative
   background-color white
 
+  nav.inner-page a
+    text-transform uppercase
+
   nav
     float right
     margin 54px 0 0 0
@@ -74,10 +77,10 @@ h3
 #header
   width 958px
   height 97px
-  background rgb(247,247,247) /* Old browsers */
-  background -moz-linear-gradient(top, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 26%, rgba(255,255,255,1) 100%) /* FF3.6-15 */
-  background -webkit-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 26%,rgba(255,255,255,1) 100%) /* Chrome10-25,Safari5.1-6 */
-  background linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 26%,rgba(255,255,255,1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background rgb(247, 247, 247) /* Old browsers */
+  background -moz-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 100%) /* FF3.6-15 */
+  background -webkit-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 100%) /* Chrome10-25,Safari5.1-6 */
+  background linear-gradient(to bottom, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   box-shadow 0 7px 6px -10px #000
   border 1px solid white
   overflow hidden
@@ -144,6 +147,30 @@ h3
     font-family 'Kreon', serif
     font-size 12px
     color #437d8b
+
+#second-nav.inner-page
+  background-color white
+  background-image none
+
+  a
+    text-transform none
+    color #c2c2c2
+
+    &:after
+      margin-left 8px
+      content "»"
+
+#second-nav.inner-page li:last-of-type a
+  color #747474
+
+  &:after
+    content ""
+
+#second-nav.inner-page ul
+  margin-left 42px
+
+  li
+    padding-left 8px
 
 #second-nav
   width 100%
