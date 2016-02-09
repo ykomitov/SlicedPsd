@@ -35,6 +35,11 @@ footer:after,
 body
   background-repeat repeat
 
+h1
+  font-family 'Kreon', serif
+  font-weight 300
+  font-size 28px
+
 h3
   font-family 'Kreon', serif
   font-weight 300
@@ -85,6 +90,24 @@ h3
 
 #header-common.inner-page
   height 90px
+
+  #logo-text
+    position relative
+    top -27px
+    font-family 'Kreon', serif
+    font-size 30px
+    text-transform uppercase
+    font-weight 300
+    color black
+
+  #slogan
+    position relative
+    bottom 8px
+    right 165px
+    text-transform uppercase
+    font-family 'Droid Sans', serif
+    font-size 13.5px
+    color #66929c
 
 #search-box
   position absolute
@@ -209,6 +232,87 @@ main.inner-page
   height 840px
   padding-top 35px
   border-right 1px solid #f0f0f0
+
+  .pager
+    padding-right 33px
+
+  .pager-buttons
+    float right
+
+  .pager .btn.post-link
+    float left
+    width 25px
+    margin-right 5px
+
+  .btn.post-link.current
+    background-color #f6f6f6
+
+  .btn.post-link
+    float right
+    margin 25px 37px 0 0
+    width 70px
+    height 25px
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    font-family: 'Kreon', serif
+    font-weight 300
+    color: #1d1d1d;
+    font-size: 12px;
+    line-height 24px;
+    text-decoration none
+    text-align center
+    background: #fff;
+    padding 0
+    border: solid #eaeaea 1px;
+
+    &:hover
+      background: #f5f5f5;
+      background-image: -webkit-linear-gradient(top, #f5f5f5, #fafafa);
+      background-image: -moz-linear-gradient(top, #f5f5f5, #fafafa);
+      background-image: -ms-linear-gradient(top, #f5f5f5, #fafafa);
+      background-image: -o-linear-gradient(top, #f5f5f5, #fafafa);
+      background-image: linear-gradient(to bottom, #f5f5f5, #fafafa);
+
+  .post-preview
+    overflow hidden
+    margin-bottom 20px
+
+    h1
+      color: #1d1d1d
+
+    p.post-info
+      display block
+      margin 20px 0
+      padding 5px 0
+      width 550px
+      border-top 1px solid #f0f0f0
+      border-bottom 1px solid #f0f0f0
+      font-family 'Kreon', serif
+      font-weight 300
+      font-size 15px
+      color #ddd
+
+      .post-user, .post-category
+        color #a3a3a3
+
+    .post-img-container
+      float left
+      width 197px
+      height 197px
+      border 1px solid #f0f0f0
+
+    img
+      border 6px solid white
+
+    .post-text
+      height 197px
+      padding 0 38px 0 28px
+      overflow hidden
+      font-family 'Droid Sans'
+      font-size 12px
+      line-height 20px
+      color #929292
 
 aside.inner-page
   width 275px
