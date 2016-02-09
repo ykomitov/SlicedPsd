@@ -74,10 +74,10 @@ h3
 #header
   width 958px
   height 97px
-  background #f8f8f8 /* Old browsers */
-  background -moz-linear-gradient(top, #f8f8f8 0%, #ffffff 25%, #ffffff 100%) /* FF3.6-15 */
-  background -webkit-linear-gradient(top, #f8f8f8 0%, #ffffff 25%, #ffffff 100%) /* Chrome10-25,Safari5.1-6 */
-  background linear-gradient(to bottom, #f8f8f8 0%, #ffffff 25%, #ffffff 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+*/
+  background rgb(247,247,247) /* Old browsers */
+  background -moz-linear-gradient(top, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 26%, rgba(255,255,255,1) 100%) /* FF3.6-15 */
+  background -webkit-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 26%,rgba(255,255,255,1) 100%) /* Chrome10-25,Safari5.1-6 */
+  background linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 26%,rgba(255,255,255,1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   box-shadow 0 7px 6px -10px #000
   border 1px solid white
   overflow hidden
@@ -88,18 +88,23 @@ h3
   right 1px
   width 160px
   height 27px
+  background -moz-linear-gradient(top, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%) /* FF3.6-15 */
+  background -webkit-linear-gradient(top, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%) /* Chrome10-25,Safari5.1-6 */
+  background linear-gradient(to bottom, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border-left 1px solid #d5d5d5
   border-bottom 1px solid #d5d5d5
 
-  #search-input
-    width 150px
-    height 100%
-    background -moz-linear-gradient(top, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%) /* FF3.6-15 */
-    background -webkit-linear-gradient(top, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%) /* Chrome10-25,Safari5.1-6 */
-    background linear-gradient(to bottom, rgba(215, 215, 215, 0.29) 0%, rgba(234, 235, 235, 0.29) 62%, rgba(237, 236, 237, 0.29) 73%, rgba(237, 237, 237, 0.29) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    padding-left 10px
-    vertical-align middle
-    overflow hidden
+#search-input
+  width 120px
+  height 100%
+  padding-left 10px
+  background-color rgba(0, 0, 0, 0)
+  vertical-align middle overflow hidden
+
+#search-submit
+  position absolute
+  top 8px
+  right 11px
 
 #search-input::-webkit-input-placeholder
   font-size 11px
@@ -119,6 +124,11 @@ h3
   font-family Georgia
   font-style italic
   color #a5a5a5
+
+#sharing-icons
+  position absolute
+  top 8px
+  right 180px
 
 #logo
   position absolute
