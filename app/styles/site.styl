@@ -81,7 +81,6 @@ h3
       color #437d8b
 
 #header-common
-  width 958px
   height 98px
   background rgb(247, 247, 247) /* Old browsers */
   background -moz-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 100%) /* FF3.6-15 */
@@ -94,7 +93,8 @@ h3
 
   #logo-text
     position relative
-    top -27px
+    top -60px
+    right -80px
     font-family 'Kreon', serif
     font-size 30px
     text-transform uppercase
@@ -103,8 +103,10 @@ h3
 
   #slogan
     position relative
-    bottom 8px
-    right 165px
+    display block
+    width 170px
+    bottom 63px
+    right -82px
     text-transform uppercase
     font-family 'Droid Sans', serif
     font-size 13.5px
@@ -160,14 +162,15 @@ h3
 
 #logo
   position absolute
+  width 235px
 
   img
     margin 26px 0 0 34px
 
   #slogan
     position relative
-    bottom 8px
-    right 146px
+    bottom 25px
+    right -85px
     text-transform uppercase
     font-family 'Kreon', serif
     font-size 12px
@@ -351,7 +354,7 @@ aside.inner-page
   background-image url("../images/back-shadow-inner.png")
   background-repeat repeat
 
-  h1
+  h1, h3
     text-transform capitalize
 
 #page-heading
@@ -381,16 +384,18 @@ aside.inner-page
   -webkit-box-sizing border-box
   -moz-box-sizing border-box
   margin 0 62px 0 0
+  width 240px
 
   p
     font-family 'Droid Sans'
     font-size 12px
     line-height 24px
     color #929292
-    width 240px
+    width 100%
     padding-left 5px
 
   img
+    width 100%
     margin 10px 0
     border 3px solid white
     -webkit-box-shadow 1px 1px 2px 1px rgba(0, 0, 0, 0.75)
@@ -400,14 +405,14 @@ aside.inner-page
   &:last-child
     margin-right 0
 
-.col-2.item
-  width 50%
-
-.col-3.item
-  width 33.33%
-
-.col-4.item
-  width 25%
+//.col-2.item
+//  width 50%
+//
+//.col-3.item
+//  width 33.33%
+//
+//.col-4.item
+//  width 25%
 
 #info-container
   margin-top 45px
@@ -612,3 +617,26 @@ footer
   background -moz-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 13%, rgba(255, 255, 255, 1) 87%, rgba(248, 248, 248, 1) 100%)
   background -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 13%, rgba(255, 255, 255, 1) 87%, rgba(248, 248, 248, 1) 100%)
   background linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 13%, rgba(255, 255, 255, 1) 87%, rgba(248, 248, 248, 1) 100%)
+
+@media (max-width: 980px)
+  #wrap
+    width 760px
+
+    nav li
+      margin 0 10px 0 0
+
+  #main-content
+    width 660px
+
+  #page-heading
+    width 715px
+    height 160px
+
+    h3
+      margin-top 10px
+
+  .list .item
+    width 175px
+
+  #text-widget
+    display none
