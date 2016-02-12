@@ -33,7 +33,6 @@
 
   function setNumberOfActiveItems() {
     var width = $('.multimedia-slider').width();
-    console.log(width);
 
     if (width >= MAX_WIDTH) {
       numberOfVisibleItems = 7;
