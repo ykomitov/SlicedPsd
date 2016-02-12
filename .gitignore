@@ -27,7 +27,7 @@ build/Release
 node_modules
 
 # Compiled files directory
-dev
+//dev
 dist
 
 # Optional npm cache directory
