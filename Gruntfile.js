@@ -25,6 +25,15 @@ module.exports = function (grunt) {
           {expand: true, src: ['app/*.html'], dest: 'dist/', flatten: true},
           {expand: true, src: ['app/styles/*.css'], dest: 'dev/styles/', flatten: true}
         ]
+      },
+      node: {
+        files: [
+          {expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'public/fonts/', filter: 'isFile', flatten: false},
+          {expand: true, cwd: 'dist/images/', src: ['**'], dest: 'public/images/', filter: 'isFile', flatten: false},
+          {expand: true, src: ['dist/js/*.js'], dest: 'public/js/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*.html'], dest: 'server/views/', flatten: true},
+          {expand: true, src: ['dist/styles/*.css'], dest: 'public/styles/', flatten: true}
+        ]
       }
     },
     stylus: {
@@ -119,5 +128,5 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('serve', ['jshint', 'stylus:serve', 'csslint:serve', 'copy:serve', 'cssmin']);
-  grunt.registerTask('build', ['stylus', 'copy:build', 'stylus', 'cssmin', 'csslint:build', 'jshint', 'uglify', 'concat', 'connect', 'watch']);
+  grunt.registerTask('build', ['stylus', 'copy:build', 'stylus', 'cssmin', 'csslint:build', 'jshint', 'uglify', 'concat', 'copy:node', 'connect', 'watch']);
 };
