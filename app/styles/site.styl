@@ -301,10 +301,11 @@ h3
       float left
       width 197px
       height 197px
+      padding 6px
       border 1px solid #f0f0f0
 
-    img
-      border 6px solid white
+      img
+        width 100%
 
     .post-text
       height 197px
@@ -351,8 +352,9 @@ aside.inner-page
 
 #page-heading.inner-page
   margin 10px auto 0 auto
-  background-image url("../images/back-shadow-inner.png")
-  background-repeat repeat
+  background -moz-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(255, 255, 255, 1) 83%, rgba(248, 248, 248, 1) 100%)
+  background -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(255, 255, 255, 1) 83%, rgba(248, 248, 248, 1) 100%)
+  background linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(255, 255, 255, 1) 83%, rgba(248, 248, 248, 1) 100%)
 
   h1, h3
     text-transform capitalize
@@ -404,15 +406,6 @@ aside.inner-page
 
   &:last-child
     margin-right 0
-
-//.col-2.item
-//  width 50%
-//
-//.col-3.item
-//  width 33.33%
-//
-//.col-4.item
-//  width 25%
 
 #info-container
   margin-top 45px
@@ -618,7 +611,7 @@ footer
   background -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 13%, rgba(255, 255, 255, 1) 87%, rgba(248, 248, 248, 1) 100%)
   background linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 13%, rgba(255, 255, 255, 1) 87%, rgba(248, 248, 248, 1) 100%)
 
-@media (max-width: 980px)
+@media only screen and (max-width: 980px)
   #wrap
     width 760px
 
@@ -628,15 +621,131 @@ footer
   #main-content
     width 660px
 
+    h3
+      font-size 18px
+
   #page-heading
     width 715px
-    height 160px
+    height 170px
 
     h3
-      margin-top 10px
+      margin 10px 0
+
+  #page-heading.inner-page
+    height 100%
+
+    h3
+      margin 15px 0
 
   .list .item
     width 175px
 
+  #blog-posts
+    width 40%
+
   #text-widget
     display none
+
+  #main.inner-page
+    width 410px
+
+  #main.inner-page .post-preview p.post-info
+    font-size 13px
+
+  #main.inner-page .post-preview .post-img-container
+    width 150px
+    height 150px
+
+  #comments-container
+    width 382px
+
+    .comment
+      width 380px
+
+    .comment.reply
+      width 320px
+
+  #comment-form
+    width 400px
+
+  #comment-text
+    width 346px
+
+
+@media only screen and (max-width: 840px)
+  body > a.cd-btn
+    display none
+
+  #wrap
+    width 670px
+    margin 10px auto 0 auto
+
+  #main-content
+    width 570px
+
+    h3
+      font-size 18px
+
+  #main-content.inner-page
+    width 650px
+
+  #page-heading
+    width 620px
+    height 140px
+
+    h1
+      font-size 24px
+
+    h3
+      font-size 16px
+      margin 5px 0
+
+  #page-heading.inner-page
+    width 660px
+
+  #main.inner-page .post-preview .post-text
+    padding 0 0 0 20px
+
+  #main.inner-page .post-preview.post-full .post-text
+    padding 0
+
+  #blog-posts, #recent-posts, #text-widget, #recent-comments
+    display none
+
+  #multimedia-container
+    height 170px
+
+  #multimedia
+    float none
+    margin 0
+    width 100%
+
+  footer
+    height 100%
+    padding 10px 25px 0
+    margin-bottom 10px
+
+    #site-info
+      h6, p
+        display none
+
+    & > p
+      margin 0 50px 18px 0
+
+  #info-container .list .item
+    margin 0 15px 0 0
+
+    img
+      width 90%
+
+  #wrap nav.inner-page a
+    text-transform none
+
+  #comments-container .comment
+    width 370px
+
+  #comments-container .comment.reply
+    width 310px
+    right 10px
+
+//@media only screen and (max-width: 479px)

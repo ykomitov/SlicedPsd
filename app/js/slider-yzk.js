@@ -1,15 +1,101 @@
 (function () {
-  var NUMBER_OF_VISIBLE_ITEMS = 7;
+  var numberOfVisibleItems = 7,
+    eventFired = false;
+
+  var MAX_WIDTH = 491;
+  var MIDDLE_WIDTH = 261;
+
+  var delay = (function () {
+    var timer = 0;
+    return function (callback, ms) {
+      clearTimeout(timer);
+      timer = setTimeout(callback, ms);
+    };
+  })();
+
+  setNumberOfActiveItems();
+
+  $(window).resize(function () {
+    delay(function () {
+      if (!eventFired) {
+        $('.multimedia-slider').resize();
+        eventFired = true;
+      } else {
+        eventFired = false;
+        return;
+      }
+    }, 250);
+  });
+
+  $('.multimedia-slider').resize(function () {
+    setNumberOfActiveItems();
+  });
+
+  function setNumberOfActiveItems() {
+    var width = $('.multimedia-slider').width();
+    console.log(width);
+
+    if (width >= MAX_WIDTH) {
+      numberOfVisibleItems = 7;
+      setNumberOfVisibleItems(numberOfVisibleItems);
+    } else if (width <= MIDDLE_WIDTH) {
+      numberOfVisibleItems = 4;
+      setNumberOfVisibleItems(numberOfVisibleItems);
+    }
+  }
+
+  function setNumberOfVisibleItems(numberOfItems) {
+    var items = $('.slider-item'), i,
+      currentNumberOfActiveItems = findNumberOfActiveItems(items),
+      counter = 0,
+      indexOfFirstActiveItem = findFirstActiveIndex(items),
+      indexOfLastActiveItem = findLast(items);
+
+    if (numberOfItems === currentNumberOfActiveItems) {
+      return;
+    } else if (numberOfItems < currentNumberOfActiveItems) {
+      for (i = indexOfFirstActiveItem; i <= indexOfLastActiveItem; i += 1) {
+        var item = $(items[i]);
+        if (counter < numberOfItems - 1) {
+          counter++;
+        } else if (counter === numberOfItems - 1) {
+          item.addClass('last');
+          counter++;
+        } else {
+          counter++;
+          item.removeClass('last');
+          item.removeClass('active');
+          item.addClass('inactive');
+        }
+      }
+    } else {
+      for (i = 0; i < items.length; i += 1) {
+        var item = $(items[i]);
+        if (i < numberOfItems - 1) {
+          item.removeClass('inactive');
+          item.addClass('active');
+          item.removeClass('last');
+        } else if (i === numberOfItems - 1) {
+          item.removeClass('inactive');
+          item.addClass('active');
+          item.addClass('last');
+        } else {
+          item.removeClass('active');
+          item.removeClass('last');
+          item.addClass('inactive');
+        }
+      }
+    }
+  }
 
   $('#btn-prev').on('click', function () {
     var items = $('.slider-item'),
-      indexOfFirstActive = FindFirstActiveIndex(items),
-      indexOfLast = FindLast(items),
+      indexOfFirstActive = findFirstActiveIndex(items),
+      indexOfLast = findLast(items),
       hasSetLast = false,
       i, item;
 
     if (indexOfFirstActive === 0) {
-      console.log('no more');
       return;
     }
 
@@ -42,10 +128,10 @@
 
     var items = $('.slider-item'),
       itemsCount = items.length,
-      indexOfFirstActive = FindFirstActiveIndex(items),
+      indexOfFirstActive = findFirstActiveIndex(items),
       i, item;
 
-    if (itemsCount - indexOfFirstActive === NUMBER_OF_VISIBLE_ITEMS) {
+    if (itemsCount - indexOfFirstActive === numberOfVisibleItems) {
       return;
     }
 
@@ -97,7 +183,7 @@
     $that.find('p').hide();
   });
 
-  function FindFirstActiveIndex(items) {
+  function findFirstActiveIndex(items) {
     for (var i = 0; i < items.length; i += 1) {
 
       var item = $(items[i]);
@@ -108,7 +194,7 @@
     }
   }
 
-  function FindLast(items) {
+  function findLast(items) {
     for (var i = 0; i < items.length; i += 1) {
       var item = $(items[i]);
 
@@ -116,5 +202,20 @@
         return i;
       }
     }
+  }
+
+  function findNumberOfActiveItems(items) {
+    var counter = 0;
+
+    for (var i = 0; i < items.length; i += 1) {
+
+      var item = $(items[i]);
+
+      if (item.hasClass('active')) {
+        counter += 1;
+      }
+    }
+
+    return counter;
   }
 }());
