@@ -21,9 +21,9 @@ module.exports = function (grunt) {
         files: [
           {expand: true, cwd: 'app/fonts/', src: ['**'], dest: 'dist/fonts/', filter: 'isFile', flatten: false},
           {expand: true, cwd: 'app/images/', src: ['**'], dest: 'dist/images/', filter: 'isFile', flatten: false},
-          {expand: true, src: ['app/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['app/js/lib/*.js'], dest: 'dist/js/', filter: 'isFile', flatten: true},
           {expand: true, src: ['app/*.html'], dest: 'dist/', flatten: true},
-          {expand: true, src: ['app/styles/*.css'], dest: 'dist/styles/', flatten: true}
+          {expand: true, src: ['app/styles/*.css'], dest: 'dev/styles/', flatten: true}
         ]
       }
     },
@@ -34,35 +34,42 @@ module.exports = function (grunt) {
           'dev/styles/main-slider.css': 'app/styles/main-slider.styl',
           'dev/styles/slider-yzk.css': 'app/styles/slider-yzk.styl'
         }
-      },
-      build: {
-        files: {
-          'dist/styles/site.css': 'app/styles/site.styl',
-          'dist/styles/main-slider.css': 'app/styles/main-slider.styl',
-          'dist/styles/slider-yzk.css': 'app/styles/slider-yzk.styl'
-        }
       }
     },
     csslint: {
+      serve: {
+        src: ['dev/styles/**/*.css'],
+        quiet: true
+      },
       build: {
         src: ['dist/**/*.css'],
         quiet: true
       }
     },
     cssmin: {
-      build: {
+      serve: {
         files: [{
           expand: true,
-          cwd: 'dist/styles',
+          cwd: 'dev/styles',
           src: ['*.css', '!*.min.css'],
-          dest: 'dist/styles/min',
+          dest: 'dev/styles/min',
           ext: '.min.css'
         }]
       }
     },
+    uglify: {
+      options: {
+        mangle: false
+      },
+      my_target: {
+        files: {
+          'dist/js/site.min.js': ['app/js/panel.js', 'app/js/slick-init.js', 'app/js/slider-yzk.js']
+        }
+      }
+    },
     concat: {
       build: {
-        src: 'dist/styles/min/*.css',
+        src: 'dev/styles/min/*.css',
         dest: 'dist/styles/site.min.css'
       }
     },
@@ -70,13 +77,6 @@ module.exports = function (grunt) {
       styles: {
         files: ['app/**/*.styl'],
         tasks: ['stylus'],
-        options: {
-          livereload: true
-        }
-      },
-      jade: {
-        files: ['app/**/*.jade'],
-        tasks: ['jade'],
         options: {
           livereload: true
         }
@@ -93,7 +93,6 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          'app/**/*.jade',
           'app/**/*.styl',
           'app/**/*.html',
           'app/**/*.css'
@@ -110,7 +109,7 @@ module.exports = function (grunt) {
         options: {
           open: true,
           base: [
-            'dev'
+            'dist'
           ]
         }
       }
@@ -119,6 +118,6 @@ module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('serve', ['jshint', 'stylus:serve', 'copy:serve', 'connect', 'watch']);
-  grunt.registerTask('build', ['stylus:build', 'csslint', 'cssmin:build', 'jshint', 'copy:build', 'jade:build', 'uglify:build']);
+  grunt.registerTask('serve', ['jshint', 'stylus:serve', 'csslint:serve', 'copy:serve', 'cssmin']);
+  grunt.registerTask('build', ['stylus', 'copy:build', 'stylus', 'cssmin', 'csslint:build', 'jshint', 'uglify', 'concat', 'connect', 'watch']);
 };

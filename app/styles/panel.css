@@ -41,7 +41,7 @@
     white-space: nowrap;
 }
 
-#panel-heading {
+.panel-heading {
     font-family: 'Kreon', serif;
     font-weight: 300;
     font-size: 15px;
@@ -51,7 +51,7 @@
     margin-top: 20px;
 }
 
-#panel-description {
+.panel-description {
     font-family: 'Georgia', serif;
     font-size: 10px;
     font-style: italic;
@@ -59,7 +59,7 @@
     text-align: center;
 }
 
-#bg-images-container{
+.bg-images-container{
     padding: 10px 23px 0 23px;
 }
 
